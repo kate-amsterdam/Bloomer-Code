@@ -11,7 +11,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Now, the code is ready to execute.
+- Add AWS credentials. You need to have the correct access and secret key available for this to work. Then, run the following commands in your terminal:
+```
+export AWS_ACCESS_KEY=<access_key>
+export AWS_SECRET_ACCESS_KEY=<secret_key>
+```
+
+Now, the code is ready to run!
 
 ### Running the code 
 
@@ -24,7 +30,7 @@ If you want to update the data in DynamoDB with the latest data from instagram, 
 
 ### Getting new IG posts
 
-Run the following code:
+Run the following code in the same terminal you used during the "Setup" phase:
 ```
 python3 ig_inserter.py insert_media <start-date> <end-date>
 ```
@@ -33,7 +39,7 @@ This will get all posts created between <start-date> and <end-date> and put them
 
 ### Getting insights
 
-Run the following code (**Run the code in "Getting new IG posts" section first!**):
+Run the following code (**Run the code in "Getting new IG posts" section first!**) in the same terminal you used during the "Setup" phase:
 ```
 python3 ig_inserter.py update_media_insights
 ```
